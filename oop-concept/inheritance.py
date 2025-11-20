@@ -1,24 +1,26 @@
-# Inheritance act 2
-class Vehicle:
-    def __init__(self, brand, fuel):
-        self.brand = brand
-        self.fuel = fuel
+# main clas
+class Animal:
+    def speak(self):
+        return self
 
 
-class Car(Vehicle):
-    def __init__(self, brand, fuel, doors):
-        super().__init__(brand, fuel)  # Calls parent constructor
-        self.doors = doors
-
-    def drive(self, distance):
-        fuel_needed = distance * 0.1
-        if self.fuel >= fuel_needed:
-            self.fuel -= fuel_needed
-            print(f"Driving {distance} km. Fuel left: {self.fuel}")
-        else:
-            print("Not enough fuel!")
+# child class
+class Dog(Animal):
+    def speak(self):
+        print("Woof!")
+        print("Aww!")
+        print("Bark!")
 
 
-# Test
-my_car = Car("Toyota", 50, 4)
-my_car.drive(100)
+class Cat(Animal):
+    def speak(self):
+        print("Meow!")
+        print("Purr!")
+        print("Psssspss")
+
+
+dog = Dog()
+dog.speak()  # output: Woof!
+
+cat = Cat()
+cat.speak()  # output: Meow
